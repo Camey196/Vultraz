@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VULTRAS - About</title>
+<title>VULTRAS - Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,21 +12,51 @@
   <div class="container header-inner">
     <h1 class="logo">VULTRAS</h1>
     <div class="nav-right">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">ℹ️ About</a>
+
+      <div class="dropdown">
+        <button class="icon-btn" aria-haspopup="true" aria-expanded="false">☰ Menu</button>
+        <div class="dropdown-content" role="menu">
+          <a href="account.html" role="menuitem">Account</a>
+          <a href="#" data-cat="kits" role="menuitem">Conversion Kits</a>
+          <a href="#" data-cat="displays" role="menuitem">Displays</a>
+          <a href="#" data-cat="batteries" role="menuitem">Batteries</a>
+          <a href="#" data-cat="throttle" role="menuitem">Throttle</a>
+          <a href="#" data-cat="seat" role="menuitem">Seat</a>
+          <a href="#" data-cat="tires" role="menuitem">Tires</a>
+          <a href="#" data-cat="grips" role="menuitem">Grips</a>
+          <a href="#" data-cat="bars" role="menuitem">Bars</a>
+          <a href="#" data-cat="motors" role="menuitem">Motors</a>
+          <a href="#" data-cat="all" role="menuitem">Show All</a>
+          <a href="#" data-cat="featured" role="menuitem">Featured</a>
+        </div>
+      </div>
+
       <a href="cart.html" class="cart-icon" aria-label="Cart">
         🛒<span class="cart-count" id="cart-count">0</span>
       </a>
-      <a href="account.html" class="nav-link">Account</a>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <h2>About VULTRAS</h2>
-  <p>VULTRAS is a futuristic e-bike parts & conversion kit store. Starry black & white theme. This is a demo (no real charges).</p>
+  <section class="hero">
+    <h2>Welcome to VULTRAS ✦</h2>
+    <p class="muted">Explore our <strong>Featured Products</strong>. Use the Menu for categories.</p>
+  </section>
+
+  <h3 class="section-title">Featured Products</h3>
+  <section id="grid" class="products-grid"></section>
 </main>
 
 <footer class="site-footer">© VULTRAS ✦ Demo</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="js/store.js"></script>
+<script>
+  // On the landing page, default to FEATURED
+  document.addEventListener("DOMContentLoaded", () => {
+    window.VULTRAS.renderFeatured("#grid");
+  });
+</script>
 </body>
 </html>
