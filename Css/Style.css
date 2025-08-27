@@ -1,52 +1,70 @@
 :root{
   --max-width:1100px;
   --gap:16px;
-  --accent:#fff;
+  --accent:#0ff;
   --muted:#ccc;
   --card-bg:#111;
   --bg:#000;
-  --radius:10px;
+  --radius:12px;
 }
 
 body{
   margin:0;
-  font-family:system-ui,sans-serif;
-  background:var(--bg) url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg,#000,#111), url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  background-blend-mode: overlay;
   color:#fff;
 }
 
 a{color:#fff;text-decoration:none}
-button{cursor:pointer;font-weight:600}
+button{cursor:pointer;font-weight:600;transition:.2s}
 
 .container{max-width:var(--max-width);margin:0 auto;padding:16px;}
 .site-header{background:#000;border-bottom:1px solid #333}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
-.logo{font-size:1.4rem;letter-spacing:2px;font-weight:800;margin:0}
-.nav-right{display:flex;align-items:center;gap:10px}
-.pill{background:#111;padding:6px 8px;border-radius:999px;border:1px solid #333}
-.download-btn{background:#fff;color:#000;border:none;padding:8px 12px;border-radius:8px}
-.icon-btn{background:none;border:none;color:#fff;font-size:1.2rem}
+.logo{font-size:1.6rem;letter-spacing:2px;font-weight:800;margin:0}
+.nav-right{display:flex;align-items:center;gap:12px}
+.cart-icon{
+  position: relative;
+  font-size:1.6rem;
+  padding:4px 8px;
+  border-radius:8px;
+  background:#111;
+  border:1px solid #333;
+  text-decoration:none;
+  color:#fff;
+}
+.cart-icon span{
+  position:absolute;top:-6px;right:-6px;
+  background:red;color:#fff;font-size:0.7rem;
+  font-weight:bold;width:16px;height:16px;
+  text-align:center;line-height:16px;border-radius:50%;
+  border:1px solid #000;
+}
 .dropdown{position:relative}
 .dropdown-content{display:none;position:absolute;top:100%;right:0;background:#111;border:1px solid #333;border-radius:8px;min-width:180px;z-index:2000}
 .dropdown-content a{display:block;padding:8px 12px;border-bottom:1px solid #222}
 .dropdown-content a:last-child{border-bottom:none}
 .dropdown:hover .dropdown-content{display:block}
 
-.hero{margin:18px 0}
+.hero{margin:20px 0}
 #search{width:100%;padding:10px;border-radius:8px;border:1px solid #444;background:#000;color:#fff}
 
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--gap);margin-top:18px}
-.card{background:var(--card-bg);padding:14px;border-radius:var(--radius);border:1px solid #333;display:flex;flex-direction:column;gap:10px}
-.card img{width:100%;height:140px;object-fit:cover;border-radius:8px;background:#000}
+.card{background: linear-gradient(145deg,#111,#222);padding:14px;border-radius:var(--radius);border:1px solid #444;display:flex;flex-direction:column;gap:10px;transition:.2s;box-shadow:0 4px 15px rgba(0,0,0,.5);}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,.7);}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:var(--radius);background:#000}
 .price{font-weight:700}
 .actions{margin-top:auto}
+button{background:#0ff;color:#000;border:none;padding:6px 12px;border-radius:8px;font-weight:700}
+button:hover{background:#0ff;filter:brightness(1.2)}
 
 .checkout{background:#111;padding:18px;border-radius:var(--radius);margin-top:18px;border:1px solid #333}
 .checkout input{padding:8px;border-radius:8px;border:1px solid #555;background:#000;color:#fff;width:100%}
 
 .site-footer{text-align:center;padding:18px;color:var(--muted)}
 
-.toast{position:fixed;right:18px;bottom:18px;background:#fff;color:#000;padding:10px 14px;border-radius:10px;opacity:0;transform:translateY(10px);transition:.25s;z-index:2000}
+.toast{position:fixed;right:18px;bottom:18px;background:#0ff;color:#000;padding:10px 14px;border-radius:10px;opacity:0;transform:translateY(10px);transition:.25s;z-index:2000}
 .toast.show{opacity:1;transform:translateY(0)}
 
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:3000}
