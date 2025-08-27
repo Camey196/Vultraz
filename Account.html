@@ -9,23 +9,25 @@
 </head>
 <body>
 <header class="site-header">
- <div class="container header-inner">
-  <h1 class="logo">VULTRAS</h1>
-  <div class="nav-right">
-   <a href="about.html">ℹ️ About</a>
-   <a href="index.html">Home</a>
-   <a href="cart.html" class="cart-icon">🛒<span id="cart-count">0</span></a>
+  <div class="container header-inner">
+    <h1 class="logo">VULTRAS</h1>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">ℹ️ About</a>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        🛒<span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
   </div>
- </div>
 </header>
 
 <main class="container">
-<h2>Account</h2>
-<p>This is a placeholder for Stripe login / account integration.</p>
+  <h2>Account</h2>
+  <p>Stripe login/account placeholder. You can later integrate Stripe Customer Portal or Checkout.</p>
 </main>
 
 <footer class="site-footer">© VULTRAS ✦ Demo</footer>
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="js/store.js"></script>
 </body>
 </html>
