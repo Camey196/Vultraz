@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VULTRAS - Cart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+ <div class="container header-inner">
+  <h1 class="logo">VULTRAS</h1>
+  <div class="nav-right">
+   <a href="about.html">ℹ️ About</a>
+   <a href="index.html">Home</a>
+   <a href="account.html">Account</a>
+  </div>
+ </div>
+</header>
+
+<main class="container">
+<section class="checkout">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <p>Subtotal: <strong id="subtotal">€0.00</strong><br>
+     Shipping: <strong id="shipping">€0.00</strong><br>
+     Total: <strong id="total">€0.00</strong></p>
+  <form id="checkout-form">
+    <input name="name" placeholder="Full name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="address" placeholder="Address" required>
+    <button type="submit">Place order (demo)</button>
+  </form>
+</section>
+</main>
+
+<footer class="site-footer">© VULTRAS ✦ Demo</footer>
+<div id="toast" class="toast"></div>
+<script src="js/store.js"></script>
+</body>
+</html>
