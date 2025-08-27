@@ -9,35 +9,65 @@
 </head>
 <body>
 <header class="site-header">
- <div class="container header-inner">
-  <h1 class="logo">VULTRAS</h1>
-  <div class="nav-right">
-   <a href="about.html">ℹ️ About</a>
-   <a href="index.html">Home</a>
-   <a href="account.html">Account</a>
-   <a href="cart.html" class="cart-icon">🛒<span id="cart-count">0</span></a>
+  <div class="container header-inner">
+    <h1 class="logo">VULTRAS</h1>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">ℹ️ About</a>
+      <a href="account.html" class="nav-link">Account</a>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        🛒<span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
   </div>
- </div>
 </header>
 
 <main class="container">
-<section class="checkout">
-  <h3>Your Cart</h3>
-  <div id="cart-items"></div>
-  <p>Subtotal: <strong id="subtotal">€0.00</strong><br>
-     Shipping: <strong id="shipping">€0.00</strong><br>
-     Total: <strong id="total">€0.00</strong></p>
-  <form id="checkout-form">
-    <input name="name" placeholder="Full name" required>
-    <input name="email" type="email" placeholder="Email" required>
-    <input name="address" placeholder="Address" required>
-    <button type="submit">Place order (demo)</button>
-  </form>
-</section>
+  <section class="checkout">
+    <h3>Your Cart</h3>
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="totals">
+      <p>Subtotal: <strong id="subtotal">€0.00</strong></p>
+      <p>Shipping: <strong id="shipping">€0.00</strong> <span class="muted">(free over €50)</span></p>
+      <p class="grand-total">Total: <strong id="total">€0.00</strong></p>
+    </div>
+
+    <div class="cart-actions">
+      <button id="clear-cart" class="btn-outline">Clear Cart</button>
+      <a href="index.html" class="btn-link">Continue Shopping</a>
+    </div>
+
+    <form id="checkout-form" class="checkout-form">
+      <h4>Checkout (Demo)</h4>
+      <input name="name" placeholder="Full name" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <input name="address" placeholder="Address" required>
+      <button type="submit" class="btn-primary">Place Order</button>
+    </form>
+  </section>
 </main>
 
 <footer class="site-footer">© VULTRAS ✦ Demo</footer>
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="js/store.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Render current cart into this page's cart list
+    window.VULTRAS.renderCart("#cart-items");
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      window.VULTRAS.clearCart();
+      window.VULTRAS.renderCart("#cart-items");
+      window.VULTRAS.toast("Cart cleared");
+    });
+
+    document.getElementById("checkout-form").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      window.VULTRAS.toast("Demo order placed — not charged.");
+      window.VULTRAS.clearCart();
+      window.VULTRAS.renderCart("#cart-items");
+    });
+  });
+</script>
 </body>
 </html>
