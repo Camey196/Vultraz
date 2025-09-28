@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vultras v4 - E-Bike Conversion Kits</title>
+<title>Vultras v5 - E-Bike Conversion Kits</title>
 <style>
 /* Reset & basics */
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -14,19 +14,17 @@ body, html { width:100%; height:100%; font-family:'Segoe UI',sans-serif; overflo
 .star { position:absolute; border-radius:50%; background:#4F7942; animation:twinkle 2s infinite; }
 @keyframes twinkle { 0%,100%{opacity:0.3; transform:scale(1);} 50%{opacity:1; transform:scale(1.5);} }
 
-/* Moving stars */
+/* Moving stars with trail */
 .moving-star {
-    position:absolute; width:2px; height:2px; background:#4F7942;
-    border-radius:50%; animation:moveStar linear infinite;
+    position:absolute; width:2px; height:2px; background:#4F7942; border-radius:50%;
+    box-shadow: 0 0 6px #4F7942; /* small trail effect */
+    animation-name:moveStar;
+    animation-timing-function: linear;
 }
 @keyframes moveStar {
     0% { transform: translateX(-50px); }
     100% { transform: translateX(110vw); }
 }
-
-/* Scroll animations */
-.scroll-animate { opacity:0; transform:translateY(40px); transition: all 1s ease-out; }
-.scroll-animate.active { opacity:1; transform:translateY(0); }
 
 /* Button-style UI */
 .button-style {
@@ -44,11 +42,6 @@ header { display:flex; justify-content:space-between; align-items:center; paddin
 header h1 { font-size:2rem; letter-spacing:2px; }
 nav a { margin-left:20px; }
 
-/* Hero */
-.hero { text-align:center; padding:4rem 2rem; margin-bottom:2rem; }
-.hero h2 { font-size:3rem; margin-bottom:1rem; }
-.hero p { font-size:1.2rem; margin-bottom:2rem; }
-
 /* Features */
 .features { display:flex; flex-wrap:wrap; justify-content:space-around; gap:2rem; }
 .feature-card { flex:1 1 300px; padding:2rem; text-align:center; }
@@ -59,6 +52,7 @@ nav a { margin-left:20px; }
 
 /* Footer */
 footer { text-align:center; padding:1rem; margin-top:3rem; }
+
 </style>
 </head>
 <body>
@@ -68,18 +62,11 @@ footer { text-align:center; padding:1rem; margin-top:3rem; }
 <header class="scroll-animate">
     <h1 class="button-style">Vultras</h1>
     <nav>
-        <a class="button-style scroll-animate" href="#about">About</a>
         <a class="button-style scroll-animate" href="#features">Features</a>
         <a class="button-style scroll-animate" href="#categories">Categories</a>
         <a class="button-style scroll-animate" href="#contact">Contact</a>
     </nav>
 </header>
-
-<section class="hero scroll-animate" id="about">
-    <h2 class="button-style">Upgrade Your Ride</h2>
-    <p class="button-style">Transform your bike into a powerful e-bike with Vultras conversion kits. Smooth, fast, and electric.</p>
-    <a class="button-style" href="#features">Shop Now</a>
-</section>
 
 <section class="container features" id="features">
     <div class="feature-card scroll-animate button-style">
@@ -99,26 +86,23 @@ footer { text-align:center; padding:1rem; margin-top:3rem; }
 <section class="container categories" id="categories">
     <div class="category button-style scroll-animate">
         <h3>Urban Commuter</h3>
-        <p>Perfect for city streets and short trips.</p>
     </div>
     <div class="category button-style scroll-animate">
         <h3>Mountain Explorer</h3>
-        <p>Conquer trails with ease and power.</p>
     </div>
     <div class="category button-style scroll-animate">
         <h3>Speed Racer</h3>
-        <p>For thrill seekers and fast-paced rides.</p>
     </div>
 </section>
 
 <footer class="scroll-animate button-style" id="contact">
-    <p>Vultras v4</p>
+    <p>Vultras v5</p>
 </footer>
 
 <script>
 // Static stars
 const stars = document.getElementById('stars');
-const totalStars = 150;
+const totalStars = 50;
 for(let i=0;i<totalStars;i++){
     let star = document.createElement('div');
     star.classList.add('star');
@@ -129,16 +113,16 @@ for(let i=0;i<totalStars;i++){
     stars.appendChild(star);
 }
 
-// Moving stars occasionally
+// Moving stars at random intervals
 function createMovingStar() {
     const star = document.createElement('div');
     star.classList.add('moving-star');
     star.style.top = Math.random()*window.innerHeight + 'px';
-    star.style.animationDuration = (3 + Math.random()*4) + 's';
+    star.style.animationDuration = (4 + Math.random()*3) + 's';
     document.body.appendChild(star);
-    setTimeout(()=>star.remove(), 7000);
+    setTimeout(()=>star.remove(), 8000); // remove after animation
 }
-setInterval(createMovingStar, 1500);
+setInterval(()=>{ createMovingStar(); createMovingStar(); }, 3000); // 2 moving stars every 3s
 
 // Scroll animations
 const scrollElements = document.querySelectorAll('.scroll-animate');
