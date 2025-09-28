@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vultras v6 - E-Bike Conversion Kits</title>
+<title>Vultras v7 - E-Bike Conversion Kits</title>
 <style>
 /* Reset & basics */
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -46,17 +46,17 @@ header { display:flex; justify-content:space-between; align-items:center; paddin
 header h1 { font-size:2rem; letter-spacing:2px; }
 nav a { margin-left:20px; }
 
-/* Features */
-.features { display:flex; flex-wrap:wrap; justify-content:space-around; gap:2rem; }
-.feature-card { flex:1 1 300px; padding:2rem; text-align:center; }
-
-/* Categories */
-.categories { display:flex; justify-content:space-around; flex-wrap:wrap; gap:2rem; margin-top:3rem; }
-.category { flex:1 1 250px; padding:2rem; text-align:center; }
+/* Product Page Layout */
+.product-page { margin-top:3rem; }
+.product-card { margin-bottom:2rem; padding:2rem; border:1px solid #5FA14B; border-radius:10px; background: rgba(0,0,0,0.6); }
+.product-card h3 { margin-bottom:1rem; font-size:1.5rem; }
+.product-card p { margin-bottom:1rem; }
+.product-card ul { margin-bottom:1rem; list-style-type: none; padding-left: 0; }
+.product-card ul li { margin-bottom:0.5rem; }
+.product-card .button-style { margin-top:1rem; }
 
 /* Footer */
 footer { text-align:center; padding:1rem; margin-top:3rem; }
-
 </style>
 </head>
 <body>
@@ -66,44 +66,84 @@ footer { text-align:center; padding:1rem; margin-top:3rem; }
 <header class="scroll-animate">
     <h1 class="button-style">Vultras</h1>
     <nav>
-        <a class="button-style scroll-animate" href="#features">Features</a>
-        <a class="button-style scroll-animate" href="#categories">Categories</a>
-        <a class="button-style scroll-animate" href="#contact">Contact</a>
+        <a class="button-style scroll-animate" href="#kits">Kits</a>
+        <a class="button-style scroll-animate" href="#bundles">Bundles</a>
+        <a class="button-style scroll-animate" href="#accessories">Accessories</a>
     </nav>
 </header>
 
-<section class="container features" id="features">
-    <div class="feature-card scroll-animate button-style">
-        <h3>Easy Installation</h3>
-        <p>Convert your bike in minutes without technical hassle.</p>
+<section class="container product-page" id="kits">
+    <div class="product-card scroll-animate">
+        <h3>Vultras 1500W Kit</h3>
+        <p>Ideal for commuting and light off-road use.</p>
+        <ul>
+            <li><strong>Top Speed:</strong> 50–60 km/h</li>
+            <li><strong>Motor:</strong> 1500W Gearless Hub (MTX 39 Rim)</li>
+            <li><strong>Controller:</strong> 35A Smart Controller</li>
+            <li><strong>Display Options:</strong> SW900 or UKC1</li>
+            <li><strong>Includes:</strong> Throttle, brake levers w/ cut-off, PAS sensor, torque arms</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
     </div>
-    <div class="feature-card scroll-animate button-style">
-        <h3>Powerful Motor</h3>
-        <p>High-torque motors for long rides and steep hills.</p>
+    <div class="product-card scroll-animate">
+        <h3>Vultras 2000W Kit</h3>
+        <p>Perfect for city streets and light off-road terrain.</p>
+        <ul>
+            <li><strong>Top Speed:</strong> 60–70 km/h</li>
+            <li><strong>Motor:</strong> 2000W Gearless Hub (MTX 39 Rim)</li>
+            <li><strong>Controller:</strong> 45A Smart Controller</li>
+            <li><strong>Display Options:</strong> SW900 or UKC1</li>
+            <li><strong>Includes:</strong> Throttle, brake levers w/ cut-off, PAS sensor, torque arms</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
     </div>
-    <div class="feature-card scroll-animate button-style">
-        <h3>Silent & Electric</h3>
-        <p>Neighbors don’t care either because it’s electric.</p>
-    </div>
+    <!-- Add more product cards as needed -->
 </section>
 
-<section class="container categories" id="categories">
-    <div class="category button-style scroll-animate">
-        <h3>Urban Commuter</h3>
-        <p>Perfect for city streets and short trips.</p>
+<section class="container product-page" id="bundles">
+    <div class="product-card scroll-animate">
+        <h3>Vultras 1500W Bundle</h3>
+        <p>Complete kit with motor, controller, display, and accessories.</p>
+        <ul>
+            <li><strong>Includes:</strong> 1500W Kit + Battery + Accessories</li>
+            <li><strong>Best For:</strong> Commuting, weekend rides, light off-road</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
     </div>
-    <div class="category button-style scroll-animate">
-        <h3>Mountain Explorer</h3>
-        <p>Conquer trails with ease and power.</p>
+    <div class="product-card scroll-animate">
+        <h3>Vultras 2000W Bundle</h3>
+        <p>All-in-one package for enhanced performance.</p>
+        <ul>
+            <li><strong>Includes:</strong> 2000W Kit + Battery + Accessories</li>
+            <li><strong>Best For:</strong> City streets, light off-road, everyday riding</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
     </div>
-    <div class="category button-style scroll-animate">
-        <h3>Speed Racer</h3>
-        <p>For thrill seekers and fast-paced rides.</p>
-    </div>
+    <!-- Add more bundle cards as needed -->
 </section>
 
-<footer class="scroll-animate button-style" id="contact">
-    <p>Vultras v6 - Electric Supplier</p>
+<section class="container product-page" id="accessories">
+    <div class="product-card scroll-animate">
+        <h3>Vultras CNC Throttle</h3>
+        <p>Precision-machined alloy throttle for enhanced control.</p>
+        <ul>
+            <li><strong>Features:</strong> Plug & Play installation, durable construction</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
+    </div>
+    <div class="product-card scroll-animate">
+        <h3>Heavy-Duty Torque Arms</h3>
+        <p>Reinforced torque arms to prevent axle slip.</p>
+        <ul>
+            <li><strong>Features:</strong> Bolt-on installation, compatible with most frames</li>
+        </ul>
+        <a href="#" class="button-style">Add to Cart</a>
+    </div>
+    <!-- Add more accessory cards as needed -->
+</section>
+
+<footer class="scroll-animate button-style">
+    <p>Vultras v7 - Electric Supplier</p>
 </footer>
 
 <script>
